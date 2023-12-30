@@ -1,6 +1,6 @@
 * {
   font-family: 'Italiana', sans-serif;
-
+  box-sizing: border-box;
 }
 
 .background {
@@ -14,9 +14,12 @@
 }
 
 
+
+/* ---------- Game Board ---------- */
+
 .title {
   font-size: 60px;
-  margin-bottom: 0px;
+  margin-top: 60px;
   color: white;
   font-size: 100px;
 }
@@ -27,9 +30,7 @@
   margin-top: -10px;
 }
 
-/* ---------- Game Board ---------- */
-
-.square {
+/* .square {
   border: 2px solid white;
   height: 200px;
   width: 200px;
@@ -43,7 +44,7 @@
 }
 
 .board {
-  margin-top: 50px;
+  margin-top: 5%;
   margin: auto;
   width: 600px;
   height: 600px;
@@ -51,6 +52,35 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 20px;
+} */
+
+.game-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.board {
+  width: 80%;
+  max-width: 600px; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+
+.square {
+  border: 2px solid white;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  font-weight: bold;
 }
 
 .square:nth-child(3n + 1) {
@@ -67,7 +97,7 @@
 
 .square:nth-last-child(-n + 3) {
   border-bottom: none;
-}
+} 
 
 .button {
   border: 2px solid white;
@@ -99,6 +129,62 @@
   background-color: #C19A6B;
   letter-spacing: 10px;
   outline: none;
+} 
+
+@media screen and (min-width: 1280px) {
+  .game-container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .board {
+    margin: 0;
+    grid-gap: 0;
+    border: 2px solid none; 
+    width: 30%; 
+  }
+
+  .square {
+    width: 10vw; 
+    height: 10vw;
+    gap: 0; 
+  }
+
+  .title {
+    font-size: 7vw;
+    margin-top: 10px;
+  }
+} 
+
+@media screen and (max-width: 768px) {
+  .game-container {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .board {
+    margin: 0;
+    grid-gap: 0;
+  }
+
+  .square {
+    width: 30vw; 
+    height: 30vw; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 15vw;
+  }
+
+  .square {
+    width: 25vw; 
+    height: 25vw; 
+    font-size: 16vw;
+  }
 }
 
 /* ---------- Modal ---------- */
@@ -162,7 +248,7 @@
 }
 
 .intro-header {
-  font-size: 4rem; 
+  font-size: 3rem; 
   margin-bottom: 10px; 
 }
 
@@ -189,6 +275,45 @@
   letter-spacing: 10px;
   text-align: center;
   outline: none;
+}
+
+.input-box{ 
+  width: 30vw;
+  height: 50px; 
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1280px) {
+  .intro-container {
+    border: 2px solid none;
+  }
+  .intro-header {
+    font-size: 7vw;
+  }
+
+  .intro-body {
+    font-size: 4vw;
+    border: 2px solid none;
+  }
+
+  .input-box {
+    width: 100%;
+    border: 1px solid none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .intro-header {
+    font-size: 10vw;
+  }
+
+  .intro-body {
+    font-size: 5vw;
+  }
 }
 
 /* ---------- Marker Page ---------- */
@@ -260,6 +385,21 @@
   width: 90px;
 }
 
+@media screen and (max-width: 480px) {
+  .marker-header {
+    font-size: 10vw;
+    margin-top: 100px;
+  }
+
+  .marker-body {
+    font-size: 5vw;
+  }
+
+  .marker-select {
+    height: 75px;
+    width: 75px;
+  }
+}
 
 /* ---------- in process cursor ---------- */
 
