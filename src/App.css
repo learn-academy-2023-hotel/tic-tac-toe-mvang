@@ -287,7 +287,7 @@
   margin: auto;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
+  border: 1px solid black;
 }
 
 @media screen and (min-width: 1280px) {
@@ -343,6 +343,10 @@
   font-size: 1.5rem;
 }
 
+.marker-options {
+  color: black;
+}
+
 .marker-button {
   width: 150px;
   height: 30px;
@@ -353,6 +357,7 @@
   transition: 2s ease;
   font-size: 20px;
   outline: none;
+  color: black;
 }
 
 .marker-button:hover {
@@ -374,6 +379,7 @@
   transition: background-color 0.8s ease, border 0.8s ease;
   outline: none;
   /* margin-bottom: 25px; */
+  color: black;
 }
 
 .marker-select:hover,
