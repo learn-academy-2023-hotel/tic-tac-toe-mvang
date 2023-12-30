@@ -419,6 +419,17 @@
   }
 }
 
+/* ---------- Footer ---------- */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #C19A6B;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
 /* ---------- in process cursor ---------- */
 
 body {

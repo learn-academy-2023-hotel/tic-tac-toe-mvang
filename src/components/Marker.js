@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import Footer from "./Footer";
 
 const Marker = () => {
     const navigate = useNavigate();
@@ -58,6 +59,7 @@ const Marker = () => {
             <button onClick={handleSubmission} className="marker-button">
                 Submit
             </button> <br/>
+            <Footer />
         </div>
     );
 }
