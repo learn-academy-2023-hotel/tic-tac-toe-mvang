@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import Square from "./Square";
 import WinnerModal from "./WinnerModal";
 import TieModal from "./TieModal";
+import Footer from "./Footer";
 import { useLocation } from "react-router-dom";
+
 
 const Game = () => {
   const location = useLocation();
@@ -135,6 +137,7 @@ const Game = () => {
           toggle={toggleTieModal}
         />
       </div>
+      <Footer />
     </div>
   );
 };

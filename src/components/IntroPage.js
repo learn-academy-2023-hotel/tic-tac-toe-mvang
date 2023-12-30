@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import Footer from "./Footer";
 
 const IntroPage = () => {
     const [name, setName] = useState('');
@@ -41,6 +42,7 @@ const IntroPage = () => {
                 <br/>
                 <button type="submit" className="intro-button">Next</button>
             </form>
+            <Footer />
         </div>
     );
 }
