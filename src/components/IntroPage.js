@@ -33,7 +33,7 @@ const IntroPage = () => {
                         name="name"
                         value={name}
                         onChange={handleNameChange}
-                        style={{ width: "300px", height: "50px", textAlign: "center", fontSize: "25px" }}
+                        className="input-box"
                     />
                 </label>
                 <br/>
