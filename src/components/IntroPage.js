@@ -3,21 +3,23 @@ import { useNavigate } from 'react-router-dom';
 
 const IntroPage = () => {
     const [name, setName] = useState('');
+    const [showNameError, setShowNameError] = useState(false);
     const navigate = useNavigate(); 
 
     const handleNameChange = (e) => {
         setName(e.target.value);
+        setShowNameError(false); 
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+
         if (name.trim() === '') {
-            alert('Please enter your name.');
+            setShowNameError(true);
             return;
         }
-    
-        console.log('Submitted name:', name);
+
+        // console.log('Name', name);
         navigate('/marker', { state: { playerName: name } });
     }
 
@@ -25,9 +27,8 @@ const IntroPage = () => {
         <div className="intro-container">
             <p className="intro-header">Hello, let's play Tic Tac Toe!</p>
             <p className="intro-body">Let's start by getting your name.</p>
-            <br/>
-            <form onSubmit={handleSubmit}>
-                <label >
+            <form onSubmit={handleSubmit} style={{ position: 'relative' }}>
+                <label>
                     <input
                         type="text"
                         name="name"
@@ -36,6 +37,7 @@ const IntroPage = () => {
                         className="input-box"
                     />
                 </label>
+                {showNameError && <p className="intro-error" >𖧧 Please input a name. 𖧧</p>}
                 <br/>
                 <button type="submit" className="intro-button">Next</button>
             </form>

@@ -112,6 +112,7 @@
   margin: auto;
   color: white;
   transition: 2s ease;
+  outline: none;
 }
 
 .button:hover{
@@ -292,11 +293,11 @@
     border: 2px solid none;
   }
   .intro-header {
-    font-size: 7vw;
+    font-size: 3vw;
   }
 
   .intro-body {
-    font-size: 4vw;
+    font-size: 1.5vw;
     border: 2px solid none;
   }
 
@@ -328,6 +329,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 .marker-header {
@@ -342,12 +344,13 @@
 .marker-button {
   width: 150px;
   height: 30px;
-  margin-top: 10px; 
+  /* margin-top: 30px;  */
   border-right: none;
   border-left: none;
   background-color: transparent;
   transition: 2s ease;
   font-size: 20px;
+  outline: none;
 }
 
 .marker-button:hover {
@@ -356,6 +359,7 @@
   align-items: center;
   letter-spacing: 10px;
   text-align: center;
+  outline: none;
 }
 
 .marker-select {
@@ -367,6 +371,7 @@
   margin-right: 20px;
   transition: background-color 0.8s ease, border 0.8s ease;
   outline: none;
+  /* margin-bottom: 25px; */
 }
 
 .marker-select:hover,
@@ -374,6 +379,7 @@
   background-color: #C19A6B;
   /* border: 1px solid black; */
   outline: none;
+  color: white;
 }
 
 .marker-select:last-child {
@@ -384,6 +390,7 @@
   height: 90px;
   width: 90px;
 }
+
 
 @media screen and (max-width: 480px) {
   .marker-header {
@@ -398,6 +405,17 @@
   .marker-select {
     height: 75px;
     width: 75px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .marker-header {
+    font-size: 3vw;
+  }
+
+  .marker-body {
+    font-size: 1.5vw;
+    border: 2px solid none;
   }
 }
 

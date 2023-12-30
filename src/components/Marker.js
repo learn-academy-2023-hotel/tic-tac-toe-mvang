@@ -6,13 +6,24 @@ const Marker = () => {
     const location = useLocation();
     const playerName = location?.state?.playerName || "";
     const [selectedMarker, setSelectedMarker] = useState(null);
+    const [showErrorMessage, setShowErrorMessage] = useState(false);
 
     const handleMarkerSelection = (marker) => {
         setSelectedMarker(marker);
+        setShowErrorMessage(false); 
     }
 
     const handleSubmission = () => {
-        console.log('Marker submission clicked with selected marker:', selectedMarker);
+        console.log('Handle Submission called');
+        console.log('selectedMarker:', selectedMarker);
+    
+        if (!selectedMarker) {
+            console.log('Error: No marker selected');
+            setShowErrorMessage(true);
+            return;
+        }
+
+        // console.log('Selected', selectedMarker);
         navigate('/game', { state: { playerName, selectedMarker } });
     }
 
@@ -40,8 +51,13 @@ const Marker = () => {
                     X
                 </button>
             </div>
+            {showErrorMessage && <p className="marker-error">𖧧 Please select a marker before submitting. 𖧧</p>}
+
             <br/>
-            <button onClick={handleSubmission} className="marker-button">Submit</button>
+            
+            <button onClick={handleSubmission} className="marker-button">
+                Submit
+            </button> <br/>
         </div>
     );
 }
