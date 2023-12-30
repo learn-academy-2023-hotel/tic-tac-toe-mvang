@@ -10,11 +10,9 @@ const Square = (props) => {
     return {};
   };
   return (
-    // <div className="square-container">
       <div className="square" onClick={props.onClick} style={getSquareStyle()}>
         {props.value}
       </div>
-    // </div>
   );
 };
 
