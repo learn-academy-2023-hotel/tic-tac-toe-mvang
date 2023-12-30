@@ -76,13 +76,30 @@
   border-left: none;
   border-right: none;
   height: 50px;
-  width: 200px;
+  width: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 30px;
   margin: auto;
   color: white;
+  transition: letter-spacing 0.8s ease;
+}
+
+.button:hover{
+  border: 2px solid white;
+  border-left: none;
+  border-right: none;
+  height: 50px;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: auto;
+  color: white;
+  background-color: #C19A6B;
+  letter-spacing: 10px;
 }
 
 /* ---------- modal ---------- */

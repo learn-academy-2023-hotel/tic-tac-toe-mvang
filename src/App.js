@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Square from './components/Square';
 import WinnerModal from './components/WinnerModal';
 import TieModal from './components/TieModal';
+import NameModal from './components/NameModal';
 import './App.css';
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
   const [showWinnerModal, setShowWinnerModal] = useState(false);
   const [showTieModal, setShowTieModal] = useState(false);
   const [winner, setWinner] = useState(null);
-  const [currentTurn, setCurrentTurn] = useState('X'); // Add turn state
+  const [currentTurn, setCurrentTurn] = useState('X'); 
 
   const toggleWinnerModal = () => {
     setShowWinnerModal(!showWinnerModal);
@@ -38,7 +39,7 @@ const App = () => {
       setShowTieModal(true);
     }
 
-    // Toggle current turn for notification
+
     setCurrentTurn((prevTurn) => (prevTurn === 'X' ? 'O' : 'X'));
   };
 
