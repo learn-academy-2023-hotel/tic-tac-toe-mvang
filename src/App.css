@@ -1,5 +1,137 @@
+* {
+  font-family: 'Italiana', sans-serif;
+
+}
+
+.background {
+  align-items: center;
+  text-align: center;
+  background-image: url('./assets/leafbackground.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+
+.title {
+  font-size: 60px;
+  margin-bottom: 0px;
+  color: white;
+  /* margin-top: 50px; */
+  font-size: 100px;
+}
+
+.turn {
+  color: white;
+  font-size: 30px;
+  margin-top: -10px;
+
+}
+
+/* ---------- tic tac toe board  ---------- */
+
 .square {
-  border: 2px solid black;
-  height: 100px;
-  width: 100px;
+  border: 2px solid white;
+  height: 200px;
+  width: 200px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  font-weight: bold;
+
+}
+
+.board {
+  margin-top: 50px;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  border: 2px solid none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 20px;
+}
+
+.square:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.square:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.square:nth-child(-n + 3) {
+  border-top: none;
+}
+
+.square:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.button {
+  border: 2px solid white;
+  border-left: none;
+  border-right: none;
+  height: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: auto;
+  color: white;
+}
+
+/* ---------- modal ---------- */
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 100vh; 
+  font-size: 25px;;
+}
+
+.modal-title {
+  text-align: center;
+  margin: auto;
+  font-size: 40px;
+}
+.modal-center {
+  text-align: center; 
+  margin: auto;
+}
+
+.modal-content {
+  background-color: white; 
+}
+
+.modal-button {
+  font-size: 20px;
+  background-color: white;
+  width: 80px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+}
+
+.modal-button:hover {
+  background-color: #C19A6B;
+  color: black;
+  font-size: 30px;
+}
+
+/* ---------- in process cursor ---------- */
+
+body {
+  cursor: url('./assets/flower.png') 16 16, auto;
 }
