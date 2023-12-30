@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Square from "./Square";
 import WinnerModal from "./WinnerModal";
 import TieModal from "./TieModal";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const Game = () => {
   const location = useLocation();
@@ -21,8 +21,29 @@ const Game = () => {
     setShowTieModal(!showTieModal);
   };
 
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  useEffect(() => {
+    if (!isXTurn) {
+        const timer = setTimeout(() => {
+            const computerMove = getComputerMove(squares);
+            handleClick(computerMove);
+        }, Math.floor(Math.random() * 1000) + 1000);
+
+        return () => clearTimeout(timer);
+    } else {
+        const currentWinner = calculateWinner(squares);
+        if (currentWinner) {
+            setWinner(currentWinner);
+            setShowWinnerModal(true);
+        } else if (isBoardFull(squares)) {
+            setShowTieModal(true);
+        }
+    }
+}, [isXTurn, squares]);
+
   const handleClick = (index) => {
-    if (squares[index] || calculateWinner(squares)) {
+    if (squares[index] || calculateWinner(squares) || isBoardFull(squares)) {
       return;
     }
 
@@ -78,11 +99,23 @@ const Game = () => {
     return squares.every((square) => square !== null);
   };
 
+  const getComputerMove = (squares) => {
+    const emptySquares = squares.reduce((acc, value, index) => {
+      if (!value) {
+        acc.push(index);
+      }
+      return acc;
+    }, []);
+
+    const randomIndex = Math.floor(Math.random() * emptySquares.length);
+    return emptySquares[randomIndex];
+  };
+
   return (
     <div className="background">
       <h1 className="title">Tic Tac Toe</h1>
       <div className="turn">
-        <p>{`Player ${playerName}'s turn`}</p>
+        <p>{`Player ${isXTurn ? playerName || "X" : "Computer"}'s turn`}</p>
       </div>
       <div className="board">
         {squares.map((value, index) => (
@@ -98,6 +131,7 @@ const Game = () => {
       </div>
       <WinnerModal
         winner={winner}
+        playerName={playerName}
         showWinnerModal={showWinnerModal}
         resetGame={resetGame}
         toggle={toggleWinnerModal}

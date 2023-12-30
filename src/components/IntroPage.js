@@ -5,18 +5,18 @@ const IntroPage = () => {
     const [name, setName] = useState('');
     const navigate = useNavigate(); 
 
-    const handleNameChange = (event) => {
-        setName(event.target.value);
+    const handleNameChange = (e) => {
+        setName(e.target.value);
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    
         if (name.trim() === '') {
             alert('Please enter your name.');
             return;
         }
-
+    
         console.log('Submitted name:', name);
         navigate('/marker', { state: { playerName: name } });
     }
