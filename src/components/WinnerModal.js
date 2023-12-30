@@ -3,6 +3,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 const WinnerModal = ({
   winner,
+  playerName,
   showWinnerModal,
   resetGame,
   toggle,
@@ -22,7 +23,9 @@ const WinnerModal = ({
       >
         <ModalHeader className="modal-title">Congratulations</ModalHeader>
         <ModalBody className="modal-center">
-          {`Player ${winner} wins!`}
+          {winner === "X" || winner === "O"
+            ? `Player ${winner === "X" ? playerName : "Computer"} wins!`
+            : "It's a tie!"}
           <br />
           Do you want to play again?
         </ModalBody>

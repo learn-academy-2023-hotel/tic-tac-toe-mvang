@@ -1,11 +1,14 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Marker = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const playerName = location?.state?.playerName || "";
+
     const handleSubmission = () => {
         console.log('Marker submission clicked');
-        navigate('/game');
+        navigate('/game', { state: { playerName } });
     }
 
     return (
