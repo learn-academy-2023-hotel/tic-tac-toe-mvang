@@ -286,6 +286,7 @@
   margin: auto;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
 }
 
 @media screen and (min-width: 1280px) {
