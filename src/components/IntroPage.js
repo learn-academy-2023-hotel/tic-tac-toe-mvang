@@ -1,37 +1,46 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const IntroPage = () => {
     const [name, setName] = useState('');
-    const history = useHistory(); 
+    const navigate = useNavigate(); 
 
     const handleNameChange = (event) => {
         setName(event.target.value);
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
+
+        if (name.trim() === '') {
+            alert('Please enter your name.');
+            return;
+        }
+
         console.log('Submitted name:', name);
-        history.push('/');
+        navigate('/marker', { state: { playerName: name } });
     }
 
     return (
-        <div>
-            <h1>Hello, let's play Tic Tac Toe!</h1>
-            <h2>Let's start by getting your name.</h2>
+        <div className="intro-container">
+            <p className="intro-header">Hello, let's play Tic Tac Toe!</p>
+            <p className="intro-body">Let's start by getting your name.</p>
+            <br/>
             <form onSubmit={handleSubmit}>
-                <label>
+                <label >
                     <input
                         type="text"
                         name="name"
                         value={name}
                         onChange={handleNameChange}
+                        style={{ width: "300px", height: "50px", textAlign: "center", fontSize: "25px" }}
                     />
                 </label>
-                <button type="submit">Submit</button>
+                <br/>
+                <button type="submit" className="intro-button">Submit</button>
             </form>
         </div>
-    )
+    );
 }
 
 export default IntroPage;

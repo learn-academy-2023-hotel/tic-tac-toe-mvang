@@ -18,7 +18,6 @@
   font-size: 60px;
   margin-bottom: 0px;
   color: white;
-  /* margin-top: 50px; */
   font-size: 100px;
 }
 
@@ -145,6 +144,86 @@
   background-color: #C19A6B;
   color: black;
   font-size: 30px;
+}
+/* ---------- Intro Page ---------- */
+
+.intro-container {
+  margin: auto;
+  border: 3px solid none;
+  width: 80%; 
+  height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.intro-header {
+  font-size: 4rem; 
+  margin-bottom: 10px; 
+}
+
+.intro-body {
+  font-size: 2rem; 
+  margin-bottom: 10px; 
+}
+
+.intro-button {
+  width: 150px;
+  height: 30px;
+  margin-top: 10px; 
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  transition: letter-spacing 0.8s ease;
+}
+
+.intro-button:hover {
+  background-color: #C19A6B;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+/* ---------- Marker Page ---------- */
+
+.marker-container {
+  margin: auto;
+  border: 3px solid none;
+  width: 80%; 
+  height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.marker-header {
+  font-size: 4rem; 
+  margin-bottom: 10px; 
+}
+
+.marker-button {
+  width: 150px;
+  height: 30px;
+  margin-top: 10px; 
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  transition: letter-spacing 0.8s ease;
+}
+
+.marker-button:hover {
+  background-color: #C19A6B;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 10px;
+  text-align: center;
 }
 
 /* ---------- in process cursor ---------- */
