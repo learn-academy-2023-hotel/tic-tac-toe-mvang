@@ -25,10 +25,9 @@
   color: white;
   font-size: 30px;
   margin-top: -10px;
-
 }
 
-/* ---------- tic tac toe board  ---------- */
+/* ---------- Game Board ---------- */
 
 .square {
   border: 2px solid white;
@@ -82,7 +81,7 @@
   font-size: 30px;
   margin: auto;
   color: white;
-  transition: letter-spacing 0.8s ease;
+  transition: 2s ease;
 }
 
 .button:hover{
@@ -99,9 +98,10 @@
   color: white;
   background-color: #C19A6B;
   letter-spacing: 10px;
+  outline: none;
 }
 
-/* ---------- modal ---------- */
+/* ---------- Modal ---------- */
 
 .modal {
   display: flex;
@@ -138,12 +138,14 @@
   border: 1px solid black;
   border-left: none;
   border-right: none;
+  transition: 2s ease;
 }
 
 .modal-button:hover {
   background-color: #C19A6B;
   color: black;
-  font-size: 30px;
+  letter-spacing: 10px;
+  outline: none;
 }
 /* ---------- Intro Page ---------- */
 
@@ -176,16 +178,17 @@
   border-right: none;
   border-left: none;
   background-color: transparent;
-  transition: letter-spacing 0.8s ease;
+  transition: letter-spacing 2s ease;
+  font-size: 20px;
 }
 
 .intro-button:hover {
   background-color: #C19A6B;
-  font-size: 20px;
   justify-content: center;
   align-items: center;
   letter-spacing: 10px;
   text-align: center;
+  outline: none;
 }
 
 /* ---------- Marker Page ---------- */
@@ -207,6 +210,10 @@
   margin-bottom: 10px; 
 }
 
+.marker-body {
+  font-size: 1.5rem;
+}
+
 .marker-button {
   width: 150px;
   height: 30px;
@@ -214,17 +221,45 @@
   border-right: none;
   border-left: none;
   background-color: transparent;
-  transition: letter-spacing 0.8s ease;
+  transition: 2s ease;
+  font-size: 20px;
 }
 
 .marker-button:hover {
   background-color: #C19A6B;
-  font-size: 20px;
   justify-content: center;
   align-items: center;
   letter-spacing: 10px;
   text-align: center;
 }
+
+.marker-select {
+  height: 100px;
+  width: 100px;
+  font-size: 50px;
+  background-color: transparent;
+  border: none;
+  margin-right: 20px;
+  transition: background-color 0.8s ease, border 0.8s ease;
+  outline: none;
+}
+
+.marker-select:hover,
+.marker-select.selected {
+  background-color: #C19A6B;
+  /* border: 1px solid black; */
+  outline: none;
+}
+
+.marker-select:last-child {
+  margin-right: -10px;
+}
+
+.marker-image {
+  height: 90px;
+  width: 90px;
+}
+
 
 /* ---------- in process cursor ---------- */
 

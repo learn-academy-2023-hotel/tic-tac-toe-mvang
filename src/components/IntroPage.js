@@ -37,7 +37,7 @@ const IntroPage = () => {
                     />
                 </label>
                 <br/>
-                <button type="submit" className="intro-button">Submit</button>
+                <button type="submit" className="intro-button">Next</button>
             </form>
         </div>
     );

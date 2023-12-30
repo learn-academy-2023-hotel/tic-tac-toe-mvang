@@ -6,9 +6,9 @@ import { useLocation } from "react-router-dom";
 
 const Game = () => {
   const location = useLocation();
-  const playerName = location?.state?.playerName || "";
+  const { playerName, selectedMarker } = location.state || {};
   const [squares, setSquares] = useState(Array(9).fill(null));
-  const [isXTurn, setIsXTurn] = useState(true);
+  const [isXTurn, setIsXTurn] = useState(selectedMarker === "X");
   const [showWinnerModal, setShowWinnerModal] = useState(false);
   const [showTieModal, setShowTieModal] = useState(false);
   const [winner, setWinner] = useState(null);
@@ -21,26 +21,16 @@ const Game = () => {
     setShowTieModal(!showTieModal);
   };
 
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
   useEffect(() => {
     if (!isXTurn) {
-        const timer = setTimeout(() => {
-            const computerMove = getComputerMove(squares);
-            handleClick(computerMove);
-        }, Math.floor(Math.random() * 1000) + 1000);
+      const timer = setTimeout(() => {
+        const computerMove = getComputerMove(squares);
+        handleClick(computerMove);
+      }, Math.floor(Math.random() * 1000) + 1000);
 
-        return () => clearTimeout(timer);
-    } else {
-        const currentWinner = calculateWinner(squares);
-        if (currentWinner) {
-            setWinner(currentWinner);
-            setShowWinnerModal(true);
-        } else if (isBoardFull(squares)) {
-            setShowTieModal(true);
-        }
+      return () => clearTimeout(timer);
     }
-}, [isXTurn, squares]);
+  }, [isXTurn, squares]);
 
   const handleClick = (index) => {
     if (squares[index] || calculateWinner(squares) || isBoardFull(squares)) {
@@ -48,7 +38,7 @@ const Game = () => {
     }
 
     const updatedSquares = [...squares];
-    updatedSquares[index] = isXTurn ? "X" : "O";
+    updatedSquares[index] = isXTurn ? selectedMarker : "O";
     setSquares(updatedSquares);
     setIsXTurn(!isXTurn);
 
@@ -80,18 +70,14 @@ const Game = () => {
       [0, 4, 8],
       [2, 4, 6],
     ];
-
+  
     for (const line of lines) {
       const [a, b, c] = line;
-      if (
-        squares[a] &&
-        squares[a] === squares[b] &&
-        squares[a] === squares[c]
-      ) {
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return squares[a];
       }
     }
-
+  
     return null;
   };
 
@@ -115,7 +101,9 @@ const Game = () => {
     <div className="background">
       <h1 className="title">Tic Tac Toe</h1>
       <div className="turn">
-        <p>{`Player ${isXTurn ? playerName || "X" : "Computer"}'s turn`}</p>
+        <p>{`Player ${
+          isXTurn ? playerName || selectedMarker : "Computer"
+        }'s turn`}</p>
       </div>
       <div className="board">
         {squares.map((value, index) => (
