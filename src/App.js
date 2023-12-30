@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Square from './components/Square';
 import WinnerModal from './components/WinnerModal';
 import TieModal from './components/TieModal';
-import NameModal from './components/NameModal';
+import IntroPage from './components/IntroPage';
 import './App.css';
 
 const App = () => {
