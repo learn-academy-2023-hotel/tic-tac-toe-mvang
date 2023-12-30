@@ -23,9 +23,15 @@ const WinnerModal = ({
       >
         <ModalHeader className="modal-title">Congratulations</ModalHeader>
         <ModalBody className="modal-center">
-          {winner === "X" || winner === "O"
-            ? `Player ${winner === "X" ? playerName : "Computer"} wins!`
-            : "It's a tie!"}
+          {winner ? (
+            `Player ${
+              winner === "X" || winner === "🍃" || winner === "🌿"
+                ? playerName
+                : "Computer"
+            } wins!`
+          ) : (
+            "It's a tie!"
+          )}
           <br />
           Do you want to play again?
         </ModalBody>
