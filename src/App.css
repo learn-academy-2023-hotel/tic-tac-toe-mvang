@@ -13,6 +13,15 @@
   height: 100vh;
 }
 
+.background-2 {
+  align-items: center;
+  text-align: center;
+  background-image: url('./assets/leafbackground2.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 
 
 /* ---------- Game Board ---------- */
@@ -439,6 +448,44 @@
   width: 100%;
   text-align: center;
   color: white;
+}
+
+/* ---------- Not Found Page ---------- */
+.nf-container {
+  margin: auto;
+  border: 3px solid none;
+  width: 80%; 
+  height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.nf-header {
+  font-size: 4rem; 
+}
+
+.nf-body {
+  font-size: 1.5rem;
+}
+
+.nf-return-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  outline: none;
+  width: 80%;
+  border-left: none;
+  border-right: none;
+  transition: 2s ease;
+}
+
+.nf-return-button:hover {
+  background-color: #C19A6B;
+  letter-spacing: 10px;
 }
 
 /* ---------- in process cursor ---------- */

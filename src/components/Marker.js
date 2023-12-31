@@ -24,7 +24,6 @@ const Marker = () => {
             return;
         }
 
-        // console.log('Selected', selectedMarker);
         navigate('/game', { state: { playerName, selectedMarker } });
     }
 

@@ -27,12 +27,10 @@ const IntroPage = () => {
       return;
     }
 
-    // console.log('Name', name);
     navigate("/marker", { state: { playerName: name } });
   };
 
   return (
-    // <Router>
       <div className="intro-container">
         <p className="intro-header">Hello, let's play Tic Tac Toe!</p>
         <p className="intro-body">Let's start by getting your name.</p>
@@ -55,9 +53,6 @@ const IntroPage = () => {
           </button>
         </form>
         <Footer />
-        {/* <Routes>
-         <Route path="/marker" element={<Marker />} />
-        </Routes> */}
       </div>
   );
 };
