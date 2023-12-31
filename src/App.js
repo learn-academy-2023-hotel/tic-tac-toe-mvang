@@ -8,11 +8,12 @@ import "./App.css";
 const App = () => {
   return (
     <Router>
+      <IntroPage />
       <Routes>
         <Route path="/intropage" element={<IntroPage />} />
         <Route path="/marker" element={<Marker />} />
         <Route path="/game" element={<Game />} />
-        <Route path="/*" element={<Navigate to="/intropage" />} />
+        {/* <Route path="/*" element={<Navigate to="/intropage" />} /> */}
       </Routes>
     </Router>
   );
